@@ -3,18 +3,11 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
 // add the green inside this function
-//dentro de neustro componente Alert se encuentran un objeto el cual nos da la descripcion
-// de los respectivos colores que que van a ser pasados como props para posteriormente
-//ser impresos en el reactDOM 
-const Alert = (props) => {
+const Alert = props => {
 	const colorClasses = {
 		red: "alert-danger",
-		orange: "alert-warning",
-		green: "alert-success",
+		orange: "alert-warning"
 	};
-	//esta condicion nos valida que si el color que se quiere imprimir no se encuentra
-	// en nustra lista objeto nos diga que ese color no está en disponible mediante un alert
-	// de lo contrario entonces que proceda a imprimir los que si están
 	if (colorClasses[props.color] === undefined) alert(`The color ${props.color} is not in the possible list of colors`);
 
 	return (
@@ -25,7 +18,7 @@ const Alert = (props) => {
 };
 Alert.propTypes = {
 	color: PropTypes.string,
-	text: PropTypes.string,
+	text: PropTypes.string
 };
 
 // here is where the alert component is being used, you don't have to edit this part,
